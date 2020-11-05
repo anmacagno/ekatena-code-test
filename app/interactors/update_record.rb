@@ -16,11 +16,11 @@ class UpdateRecord
 
   def find_or_create_record
     record = Record.find_or_create_by(number: attributes[:number])
-    record.notifications.delete_all
     record.court = attributes[:court]
     record.actor = attributes[:actor]
     record.defendant = attributes[:defendant]
     record.summary = attributes[:summary]
+    record.notifications.delete_all
     record.notifications.build(attributes[:notifications])
     record
   end

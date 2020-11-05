@@ -1,5 +1,6 @@
 class RecordScraper
   BASE_URL = 'https://www.poderjudicialvirtual.com/'
+  LOGIN_URL = BASE_URL + 'entrar'
 
   attr_accessor :page
 
@@ -23,7 +24,7 @@ class RecordScraper
         notifications: notifications
       }
     rescue StandardError
-      raise ScraperError.new("Invalid page. Login at #{BASE_URL}.")
+      raise ScraperError.new("Invalid page. Login with a browser at #{LOGIN_URL}.")
     end
   end
 

@@ -1,0 +1,25 @@
+<h2>Records</h2>
+
+<h4>Search by actor:</h4>
+
+<%= form_tag(records_index_url, method: :get) do %>
+  <%= text_field_tag(:actor, params[:actor]) %>
+  <%= submit_tag('Search') %>
+<% end %>
+
+<table style="width: 100%">
+  <tr>
+    <th>Number</th>
+    <th>Court</th>
+    <th>Actor</th>
+    <th>Defendant</th>
+  </tr>
+  <% @records.each do |record| %>
+    <tr>
+      <td><%= record.number %></td>
+      <td><%= record.court %></td>
+      <td><%= record.actor %></td>
+      <td><%= record.defendant %></td>
+    </tr>
+  <% end %>
+</table>
