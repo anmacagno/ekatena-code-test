@@ -1,24 +1,49 @@
-# README
+# Ekatena Code Test
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This steps are necessary to get the application up and running.
 
-Things you may want to cover:
+### Prerequisites
 
-* Ruby version
+- Ruby 2.7.0
+- Rails 6.0.3
+- PostgreSQL
 
-* System dependencies
+### Check out the repository
 
-* Configuration
+```bash
+$ git clone https://github.com/anmacagno/ekatena-code-test.git
+```
 
-* Database creation
+### Dependencies
 
-* Database initialization
+```bash
+$ bundle install
+```
 
-* How to run the test suite
+### Create and setup the database
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+$ rails db:create
+$ rails db:setup
+```
 
-* Deployment instructions
+### Run the test suite
 
-* ...
+```bash
+$ bundle exec rspec
+```
+
+### Run the synchronization script
+
+For the correct execution of the script it is necessary to be authenticated on the site https://www.poderjudicialvirtual.com/entrar.
+
+Below are 4 invalid cases and 2 valid cases:
+
+```bash
+$ rake record:synchronize
+$ rake record:synchronize[]
+$ rake record:synchronize['']
+$ rake record:synchronize['test']
+$ rake record:synchronize['mn-banco-santander-mexico-s-a--banco-santander-mexico']
+$ rake record:synchronize['df-trejo-bouquet-jacqueline-del-carmen--nueva-wal-mart-de-mexico-s-de-r-l-de-c-v-y-servicios-adminis-26/2020']
+```
