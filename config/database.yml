@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: ekatena_code_test_development
+
+test:
+  <<: *default
+  database: ekatena_code_test_test
+
+production:
+  <<: *default
+  database: ekatena_code_test_production
+  username: ekatena_code_test
+  password: <%= ENV['EKATENA_CODE_TEST_DATABASE_PASSWORD'] %>
