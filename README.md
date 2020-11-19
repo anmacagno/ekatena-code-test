@@ -1,4 +1,4 @@
-# Ekatena Code Test
+# Records Crawler
 
 This steps are necessary to get the application up and running.
 
@@ -11,7 +11,7 @@ This steps are necessary to get the application up and running.
 ### Check out the repository
 
 ```bash
-$ git clone https://github.com/anmacagno/ekatena-code-test.git
+$ git clone https://github.com/anmacagno/records-crawler.git
 ```
 
 ### Dependencies

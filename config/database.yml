@@ -5,14 +5,14 @@ default: &default
 
 development:
   <<: *default
-  database: ekatena_code_test_development
+  database: records_crawler_development
 
 test:
   <<: *default
-  database: ekatena_code_test_test
+  database: records_crawler_test
 
 production:
   <<: *default
-  database: ekatena_code_test_production
-  username: ekatena_code_test
-  password: <%= ENV['EKATENA_CODE_TEST_DATABASE_PASSWORD'] %>
+  database: records_crawler_production
+  username: records_crawler
+  password: <%= ENV['RECORDS_CRAWLER_DATABASE_PASSWORD'] %>
